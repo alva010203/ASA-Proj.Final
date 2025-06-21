@@ -28,3 +28,10 @@ services:
     container_name: proxy
     ports:
       - "80:80/tcp"
+      - "443:443/tcp" 
+    volumes:
+    - "./proxy/certs:/etc/nginx/certs"
+    depends_on:
+      - dns
+      - web01
+      - web02 
