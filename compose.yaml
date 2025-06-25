@@ -1,9 +1,12 @@
+version: '3'
+
 services:
+
   dns:
     build:
       context: ./dns
       dockerfile: Dockerfile
-    container_name: dns 
+    container_name: dns
     ports:
       - "53:53/udp"
 
@@ -11,27 +14,54 @@ services:
     build:
       context: ./web
       dockerfile: Dockerfile
-    container_name: web01 
-
+    container_name: web01
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.alva.rule=Host(`alva.asa.br`)"
+      - "traefik.http.routers.alva.entrypoints=websecure"
+      - "traefik.http.routers.alva.tls.certresolver=letsencrypt"
+      - "traefik.http.services.alva.loadbalancer.server.port=80"
 
   web02:
     build:
       context: ./web02
       dockerfile: Dockerfile
-    container_name: web02 
+    container_name: web02
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.alvo.rule=Host(`alvo.asa.br`)"
+      - "traefik.http.routers.alvo.entrypoints=websecure"
+      - "traefik.http.routers.alvo.tls.certresolver=letsencrypt"
+      - "traefik.http.services.alvo.loadbalancer.server.port=80"
 
-
-  proxy:
-    build: 
-      context: ./proxy
-      dockerfile: Dockerfile
-    container_name: proxy
-    ports:
-      - "80:80/tcp"
-      - "443:443/tcp" 
+  staticweb:
+    image: nginx
+    container_name: staticweb
     volumes:
-    - "./proxy/certs:/etc/nginx/certs"
-    depends_on:
-      - dns
-      - web01
-      - web02 
+      - ./proxy/html:/usr/share/nginx/html
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.www.rule=Host(`www.asa.br`)"
+      - "traefik.http.routers.www.entrypoints=websecure"
+      - "traefik.http.routers.www.tls.certresolver=letsencrypt"
+      - "traefik.http.services.www.loadbalancer.server.port=80"
+
+  traefik:
+    image: traefik:v2.11
+    container_name: traefik
+    command:
+      - --api.insecure=true
+      - --providers.docker=true
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
+      - --certificatesresolvers.letsencrypt.acme.email=admin@asa.br
+      - --certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json
+      - --certificatesresolvers.letsencrypt.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080" # Painel Traefik opcional
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./letsencrypt:/letsencrypt

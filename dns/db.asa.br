@@ -10,8 +10,8 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 @		IN	NS	ns.
-@		IN	A	192.168.0.47
-www		IN	A	192.168.0.47
+@		IN	A	192.168.160.151
+www		IN	A	192.168.160.151
 portal	IN	CNAME	www
 alva	IN	CNAME	www
 alvo	IN	CNAME	www
