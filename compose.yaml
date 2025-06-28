@@ -82,7 +82,8 @@ services:
     volumes:
       - ./email/ssl/mail.pem:/etc/dovecot/private/dovecot.pem:ro
       - ./email/ssl/mail.key:/etc/dovecot/private/dovecot.key:ro
-  
+      - ./email/mail_data:/home
+
   webmail:
     build:
       context: ./webmail

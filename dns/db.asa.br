@@ -10,10 +10,10 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 @		IN	NS	ns.
-@		IN	A	192.168.1.168
+@		IN	A	192.168.0.4
 @       IN  MX  10 mail.asa.br
-www		IN	A	192.168.1.168
-mail    IN  A   192.168.1.168
-webmail IN  A   192.168.1.168
+www		IN	A	192.168.0.4
+mail    IN  A   192.168.0.4
+webmail IN  A   192.168.0.4
 alva	IN	CNAME	www
 alvo	IN	CNAME	www
