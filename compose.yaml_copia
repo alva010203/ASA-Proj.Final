@@ -80,9 +80,8 @@ services:
       - "143:143" #IMAP
       - "993:993" #IMAP com SSL
     volumes:
-      - ./email/ssl/mail.pem:/etc/dovecot/private/dovecot.pem:ro
-      - ./email/ssl/mail.key:/etc/dovecot/private/dovecot.key:ro
-  
+    - ./email/ssl:/etc/dovecot/private
+
   webmail:
     build:
       context: ./webmail
@@ -91,7 +90,7 @@ services:
     depends_on:
       - email
     environment:
-     - ROUNDCUBEMAIL_DEFAULT_HOST=ssl://email:993
+     - ROUNDCUBEMAIL_DEFAULT_HOST=imap://email
      - ROUNDCUBEMAIL_SMTP_SERVER=email
      - ROUNDCUBEMAIL_SMTP_PORT=25
      - ROUNDCUBEMAIL_SMTP_USER=%u

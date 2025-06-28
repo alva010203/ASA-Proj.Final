@@ -3,15 +3,17 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.asa.br. root.asa.br. (
-			      1		; Serial
+			      2		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
 @		IN	NS	ns.
-@		IN	A	192.168.0.47
-www		IN	A	192.168.0.47
-portal	IN	CNAME	www
+@		IN	A	192.168.1.168
+@       IN  MX  10 mail.asa.br
+www		IN	A	192.168.1.168
+mail    IN  A   192.168.1.168
+webmail IN  A   192.168.1.168
 alva	IN	CNAME	www
 alvo	IN	CNAME	www
