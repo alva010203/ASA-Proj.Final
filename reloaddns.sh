@@ -6,7 +6,15 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-IP=$(ip a show wlo1 | awk '/inet / {print $2}' | cut -d/ -f1)
+read -p "Digite o nome da interface de rede (ex: eth0,wlo1): " interface
+
+# Verifica se a interface existe
+if ! ip link show "$interface" > /dev/null 2>&1; then
+    echo "Interface '$interface' não encontrada." >&2
+    exit 1
+fi
+
+IP=$(ip a show "$interface" | awk '/inet / {print $2}' | cut -d/ -f1)
 arquivo="/etc/resolv.conf"
 arquivo_dns="./dns/db.asa.br"
 
