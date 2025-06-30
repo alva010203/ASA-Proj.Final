@@ -16,24 +16,13 @@ services:
       dockerfile: Dockerfile
     container_name: web01
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.alva.rule=Host(`alva.asa.br`)"
-      - "traefik.http.routers.alva.entrypoints=websecure"
-      - "traefik.http.routers.alva.tls.certresolver=letsencrypt"
-      - "traefik.http.services.alva.loadbalancer.server.port=80"
+    - "traefik.enable=true"
+    - "traefik.http.routers.portal.rule=Host(`portal.asa.br`)"
+    - "traefik.http.routers.portal.entrypoints=websecure"
+    - "traefik.http.routers.portal.tls.certresolver=letsencrypt"
+    - "traefik.http.services.portal.loadbalancer.server.port=80"
 
-  web02:
-    build:
-      context: ./web02
-      dockerfile: Dockerfile
-    container_name: web02
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.alvo.rule=Host(`alvo.asa.br`)"
-      - "traefik.http.routers.alvo.entrypoints=websecure"
-      - "traefik.http.routers.alvo.tls.certresolver=letsencrypt"
-      - "traefik.http.services.alvo.loadbalancer.server.port=80"
-
+  
   staticweb:
     image: nginx
     container_name: staticweb
