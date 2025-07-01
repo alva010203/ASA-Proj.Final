@@ -7,6 +7,9 @@ services:
       context: ./dns
       dockerfile: Dockerfile
     container_name: dns
+    restart: always
+    networks:
+      - interna
     ports:
       - "53:53/udp"
 
@@ -15,6 +18,9 @@ services:
       context: ./web
       dockerfile: Dockerfile
     container_name: web01
+    restart: always
+    networks:
+      - interna
     labels:
     - "traefik.enable=true"
     - "traefik.http.routers.portal.rule=Host(`portal.asa.br`)"
@@ -26,6 +32,9 @@ services:
   staticweb:
     image: nginx
     container_name: staticweb
+    restart: always
+    networks:
+      - interna
     volumes:
       - ./proxy/html:/usr/share/nginx/html
     labels:
@@ -38,6 +47,7 @@ services:
   traefik:
     image: traefik:v2.11
     container_name: traefik
+    restart: always
     command:
       - --api.insecure=true
       - --providers.docker=true
@@ -51,6 +61,9 @@ services:
       - "80:80"
       - "443:443"
       - "8080:8080" # Painel Traefik opcional
+    networks:
+      - interna
+      - externa
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./letsencrypt:/letsencrypt
@@ -60,6 +73,7 @@ services:
       context: ./email
       dockerfile: Dockerfile
     container_name: mailserver
+    restart: always
     hostname: mail.asa.br
     tty: true
     ports:
@@ -68,6 +82,8 @@ services:
       - "587:587" # SMTP submission
       - "143:143" #IMAP
       - "993:993" #IMAP com SSL
+    networks:
+      - interna
     volumes:
       - ./email/ssl/mail.pem:/etc/dovecot/private/dovecot.pem:ro
       - ./email/ssl/mail.key:/etc/dovecot/private/dovecot.key:ro
@@ -78,6 +94,9 @@ services:
       context: ./webmail
       dockerfile: Dockerfile
     container_name: webmail
+    restart: always
+    networks:
+      - interna
     depends_on:
       - email
     environment:
@@ -93,3 +112,10 @@ services:
       - "traefik.http.routers.webmail.entrypoints=websecure"
       - "traefik.http.routers.webmail.tls.certresolver=letsencrypt"
       - "traefik.http.services.webmail.loadbalancer.server.port=80"
+
+
+networks:
+  interna: 
+    driver: bridge
+  externa:
+    external: true
