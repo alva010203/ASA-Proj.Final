@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.asa.br. root.asa.br. (
-			      1		; Serial
+			      2		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -11,7 +11,10 @@ $TTL	604800
 ;
 @		IN	NS	ns.
 @		IN	A	192.168.0.47
+@       	IN  	MX  	10 mail.asa.br
 www		IN	A	192.168.0.47
-portal	IN	CNAME	www
-alva	IN	CNAME	www
-alvo	IN	CNAME	www
+mail    IN  A   192.168.0.47
+webmail IN  A   192.168.0.47
+portal  IN	CNAME	www
+;alva	IN	CNAME	www
+;alvo	IN	CNAME	www
