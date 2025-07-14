@@ -1,1 +1,3 @@
-Docker do web 01
+FROM nginx:latest
+
+COPY index.html /usr/share/nginx/html
