@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Cliente 1</title>
+  <meta name="description" content="Portal oficial do Cliente 1 - Soluções digitais personalizadas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: "#1E3A8A", // Azul Escuro
+          secondary: "#FACC15", // Amarelo Mostarda
+          light: "#F3F4F6", // Cinza Claro
+          medium: "#9CA3AF", // Cinza Médio
+          accent: "#10B981" // Verde Esmeralda
+        },
+        fontFamily: {
+          sans: ['Poppins', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .hero-section {
+    background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.95)), url('https://picsum.photos/1920/1080?random=2&blur=3');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+</style>
+<body class="font-sans bg-light text-medium antialiased">
+
+  <!-- Header -->
+  <header class="fixed w-full bg-white shadow-md z-50">
+    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="flex items-center justify-center w-10 h-10 bg-primary text-white rounded-lg font-bold text-xl">C1</div>
+        <span class="text-xl font-bold text-primary">Cliente 1</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-section min-h-screen flex items-center pt-20">
+    <div class="container mx-auto px-6 py-20 text-center text-white">
+      <h1 class="text-5xl font-bold mb-6">Bem-vindo ao Portal Cliente 1</h1>
+      <p class="text-xl max-w-3xl mx-auto mb-10">Acesse seus serviços digitais de forma rápida, segura e integrada.</p>
+      <a href="#servicos" class="bg-secondary hover:bg-green-500 text-white px-8 py-4 rounded-lg font-medium text-lg">
+        Ver Serviços 
+        <i class="fas fa-arrow-down ml-2"></i>
+      </a>
+    </div>
+  </section>
+
+ <!-- Serviços -->
+<section id="servicos" class="py-20 bg-gray-50">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Nossas Soluções</h2>
+      <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+      <p class="text-xl text-blue-600 max-w-2xl mx-auto">
+        "Conheça os serviços que oferecemos como parte do pacote tecnológico da NetIFRN:"
+      </p>
+    </div>
+  
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+        <i class="fas fa-server text-4xl text-primary mb-4"></i>
+        <h3 class="text-xl font-bold mb-2 text-primary">DNS</h3> <!-- Alterado para azul escuro -->
+        <p class="text-blue-600 mb-4">"Serviço de resolução de nomes com infraestrutura estável, segura e de fácil gerenciamento."</p>
+      </div>
+  
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+        <i class="fas fa-random text-4xl text-primary mb-4"></i>
+        <h3 class="text-xl font-bold mb-2 text-primary">Proxy Reverso</h3> <!-- Alterado para azul escuro -->
+        <p class="text-blue-600 mb-4">"Distribuição inteligente de aplicações web com proteção, roteamento dinâmico e escalabilidade."</p>
+      </div>
+  
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+        <i class="fas fa-globe-americas text-4xl text-primary mb-4"></i>
+        <h3 class="text-xl font-bold mb-2 text-primary">Hotsite</h3> <!-- Alterado para azul escuro -->
+        <p class="text-blue-600 mb-4">"Tenha uma página exclusiva para divulgar eventos, campanhas ou informações importantes <br> de forma rápida e personalizada."</p>
+        <a href="https://hotsite.cliente1.com.br" target="_blank" class="text-secondary underline">Acessar</a>
+      </div>
+  
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+        <i class="fas fa-pen-fancy text-4xl text-primary mb-4"></i>
+        <h3 class="text-xl font-bold mb-2 text-primary">Sign</h3> <!-- Alterado para azul escuro -->
+        <p class="text-blue-600 mb-4">"Assine documentos eletronicamente com validade jurídica,<br> segurança e praticidade, eliminando a necessidade de papel."</p>
+        <a href="https://sign.cliente1.com.br" target="_blank" class="text-secondary underline">Assinar</a>
+      </div>
+    </div>
+  </section>
+
+<!-- Equipe -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-primary mb-10">Equipe Técnica</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+  
+        <div class="bg-black-100 p-6 rounded-xl">
+          <img src="https://avatars.githubusercontent.com/u/165521280?v=4" class="w-24 h-24 rounded-full mx-auto mb-4" />
+          <h3 class="font-bold text-primary">Álvaro</h3> <!-- Alterado para azul escuro -->
+          <p>Desenvolvedor</p>
+          <a href="https://github.com/alva010203" target="_blank" class="text-primary"><i class="fab fa-github text-xl"></i></a>
+        </div>
+  
+        <div class="bg-black-100 p-6 rounded-xl">
+          <img src="https://avatars.githubusercontent.com/u/164819215?v=4" class="w-24 h-24 rounded-full mx-auto mb-4" />
+          <h3 class="font-bold text-primary">Jairo</h3> <!-- Alterado para azul escuro -->
+          <p>Desenvolvedor</p>
+          <a href="https://github.com/Jaiir0" target="_blank" class="text-primary"><i class="fab fa-github text-xl"></i></a>
+        </div>
+  
+        <div class="bg-black-100 p-6 rounded-xl">
+          <img src="https://avatars.githubusercontent.com/u/164351071?v=4" class="w-24 h-24 rounded-full mx-auto mb-4" />
+          <h3 class="font-bold text-primary">Jordan</h3> <!-- Alterado para azul escuro -->
+          <p>Desenvolvedor</p>
+          <a href="https://github.com/Jordanjuliobr23" target="_blank" class="text-primary"><i class="fab fa-github text-xl"></i></a>
+        </div>
+  
+        <div class="bg-black-100 p-6 rounded-xl">
+          <img src="https://avatars.githubusercontent.com/u/31291355?v=4" class="w-24 h-24 rounded-full mx-auto mb-4" />
+          <h3 class="font-bold text-primary">Yan</h3> <!-- Alterado para azul escuro -->
+          <p>Desenvolvedor</p>
+          <a href="https://github.com/yanmaia" target="_blank" class="text-primary"><i class="fab fa-github text-xl"></i></a>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Contato</h2>
+            <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Endereço -->
+            <div class="text-center">
+                <div class="text-4xl mb-4 text-secondary">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Endereço</h3>
+                <p>Av. Sen. Salgado Filho, 1559 – Tirol, Natal – RN, 59015-000</p>
+            </div>
+            
+            <!-- Telefone -->
+            <div class="text-center">
+                <div class="text-4xl mb-4 text-secondary">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Telefone</h3>
+                <p>(84) 99999-0000</p>
+            </div>
+            
+            <!-- Email -->
+            <div class="text-center">
+                <div class="text-4xl mb-4 text-secondary">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">E-mail</h3>
+                <p>contato@netifrn.com.br</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-12">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                <div class="flex items-center justify-center w-10 h-10 bg-primary text-white rounded-lg font-bold text-xl">
+                    IF
+                </div>
+                <span class="text-xl font-bold text-white">NetIFRN</span>
+            </div>
+            <p class="text-gray-400 text-sm">© 2025 NetIFRN – Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
