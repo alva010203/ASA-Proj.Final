@@ -1,7 +1,13 @@
 FROM nginx:latest
 
-# Copia a configuracao do servidor
-COPY default.conf /etc/nginx/conf.d
+# Cria diretórios para certificados
+RUN mkdir -p /etc/ssl/private && mkdir -p /etc/ssl/certs
 
-# Copia a pagina personalizada para a imagem do servidor
-COPY index.html /usr/share/nginx/html
+# Copia configuração do Nginx
+COPY default.conf /etc/nginx/conf.d/
+
+# Copia página HTML personalizada
+COPY index.html /usr/share/nginx/html/
+
+# Expõe as portas HTTP e HTTPS
+EXPOSE 80 443
