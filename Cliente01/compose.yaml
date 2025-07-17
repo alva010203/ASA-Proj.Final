@@ -1,3 +1,4 @@
+
 services:
   dns:
     build:
@@ -6,25 +7,49 @@ services:
     container_name: dns 
     ports:
       - "53:53/udp"
-
+    networks:
+      - interna
+      
   portal:
     build:
       context: ./portal
       dockerfile: Dockerfile
     container_name: portal_container 
-
+    networks:
+      - interna
+  sign:
+    build:
+      context: ./sign
+      dockerfile: Dockerfile
+    container_name: sign
+    networks:
+      - interna     
 
   web02:
     build:
       context: ./web02
       dockerfile: Dockerfile
     container_name: web02 
-
+    networks:
+      - interna
 
   proxy:
     build: 
       context: ./proxy
       dockerfile: Dockerfile
     container_name: proxy
+    volumes:
+      - ./certs/cliente1.crt:/etc/ssl/certs/cliente1.crt
+      - ./certs/cliente1.key:/etc/ssl/private/cliente1.key
     ports:
       - "80:80/tcp"
+      - "443:443"      
+    networks:
+      - interna
+      - externa
+
+networks:
+  interna:
+    driver: bridge
+  externa:
+    external: true
