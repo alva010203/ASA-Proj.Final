@@ -1,0 +1,114 @@
+version: '3'
+
+services:
+
+  dns:
+    build:
+      context: ./dns
+      dockerfile: Dockerfile
+    container_name: dns
+    restart: always
+    networks:
+      - interna
+    ports:
+      - "53:53/udp"
+
+  web01:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: web01
+    restart: always
+    networks:
+      - interna
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portal.rule=Host(`portal.asa.br`)"
+      - "traefik.http.routers.portal.entrypoints=websecure"
+      - "traefik.http.routers.portal.tls=true"
+      - "traefik.http.services.portal.loadbalancer.server.port=80"
+
+  staticweb:
+    image: nginx
+    container_name: staticweb
+    restart: always
+    networks:
+      - interna
+    volumes:
+      - ./proxy/html:/usr/share/nginx/html
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.www.rule=Host(`www.asa.br`)"
+      - "traefik.http.routers.www.entrypoints=websecure"
+      - "traefik.http.routers.www.tls=true"
+      - "traefik.http.services.www.loadbalancer.server.port=80"
+
+  traefik:
+    image: traefik:v2.11
+    container_name: traefik
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    networks:
+      - interna
+      - externa
+    volumes:
+     - ./dynamic.yml:/etc/traefik/dynamic.yml
+     - /var/run/docker.sock:/var/run/docker.sock
+     - ./certs:/certs
+     - ./traefik.yml:/etc/traefik/traefik.yml
+
+
+  email:
+    build:
+      context: ./email
+      dockerfile: Dockerfile
+    container_name: mailserver
+    restart: always
+    hostname: mail.asa.br
+    tty: true
+    ports:
+      - "25:25"
+      - "465:465"
+      - "587:587"
+      - "143:143"
+      - "993:993"
+    networks:
+      - interna  
+    volumes:
+      - ./email/ssl/mail.pem:/etc/dovecot/private/dovecot.pem:ro
+      - ./email/ssl/mail.key:/etc/dovecot/private/dovecot.key:ro
+      - ./email/mail_data:/home
+
+  webmail:
+    build:
+      context: ./webmail
+      dockerfile: Dockerfile
+    container_name: webmail
+    restart: always
+    networks:
+      - interna
+    depends_on:
+      - email
+    environment:
+      - ROUNDCUBEMAIL_DEFAULT_HOST=ssl://email:993
+      - ROUNDCUBEMAIL_SMTP_SERVER=email
+      - ROUNDCUBEMAIL_SMTP_PORT=25
+      - ROUNDCUBEMAIL_SMTP_USER=%u
+      - ROUNDCUBEMAIL_SMTP_PASS=%p
+      - ROUNDCUBEMAIL_DB_TYPE=sqlite
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.webmail.rule=Host(`webmail.asa.br`)"
+      - "traefik.http.routers.webmail.entrypoints=websecure"
+      - "traefik.http.routers.webmail.tls=true"
+      - "traefik.http.services.webmail.loadbalancer.server.port=80"
+
+
+networks:
+  interna: 
+    driver: bridge
+  externa:
+    external: true
