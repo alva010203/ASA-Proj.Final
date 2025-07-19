@@ -1,5 +1,0 @@
-tls:
-  certificates:
-    - certFile: "/certs/sangue.crt"
-      keyFile: "/certs/sangue.key"
-
