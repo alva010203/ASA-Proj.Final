@@ -12,6 +12,10 @@ RUN apt install bind9 dnsutils -y
 COPY named.conf.local /etc/bind
 
 COPY db.asa.br /etc/bind
+<<<<<<< HEAD
+=======
+COPY db.cliente1.br /etc/bind
+>>>>>>> 979a9dc (salva)
 
 # Todo container docker precisa de um ponto de entrada/execução para 
 # manter o container em funcionamento

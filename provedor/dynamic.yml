@@ -2,6 +2,7 @@ tls:
   certificates:
     - certFile: "/certs/selfsigned.crt"
       keyFile: "/certs/selfsigned.key"
+<<<<<<< HEAD
    # - certFile: "/certs/cliente1.crt"
     #  keyFile: "/certs/cliente1.key"
      # stores:
@@ -14,6 +15,9 @@ tls:
       #      - "hotsite.cliente1.br" 
       #      - "sign.cliente1.br" 
 #configuraçao cliente1
+=======
+ 
+>>>>>>> 979a9dc (salva)
 http:
   routers:
     www-cliente1:
@@ -48,4 +52,8 @@ http:
     cliente1-proxy:
       loadBalancer:
         servers:
+<<<<<<< HEAD
           - url: "http://proxy:80"  # do nginx no compose do cliente
+=======
+          - url: "http://proxy:80"  
+>>>>>>> 979a9dc (salva)
