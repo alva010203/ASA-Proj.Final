@@ -10,13 +10,8 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 @		IN	NS	ns.
-<<<<<<< HEAD
-@		IN	A	10.99.98.254
-www		IN	A	10.99.98.254
-=======
 @		IN	A	192.168.0.47
 www		IN	A	192.168.0.47
->>>>>>> 979a9dc (salva)
 portal	IN	CNAME	www
 hotsite	IN	CNAME	www
 sign	IN	CNAME	www
