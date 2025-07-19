@@ -15,6 +15,3 @@ providers:
 api:
   insecure: true
   dashboard: true
-
-
-  
