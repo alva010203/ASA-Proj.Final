@@ -26,14 +26,9 @@ services:
   proxy:
     build: 
       context: ./proxy
-<<<<<<< HEAD
-      dockerfile: Dockerfile
-    #volumes:
-    #  - ./certs/cliente1.crt:/etc/ssl/certs/cliente1.crt
-    #  - ./certs/cliente1.key:/etc/ssl/private/cliente1.key  
-=======
+
       dockerfile: Dockerfile  
->>>>>>> 979a9dc (salva)
+
     networks:
       - interna
       - externa
