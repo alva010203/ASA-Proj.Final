@@ -148,7 +148,7 @@ Atribuição: DNS / Portal
 
 Vídeo de execução:
 
-[https://drive.google.com/file/d/1i6ZEdfIqAHLSiRBQQT0p1lckRug9dkpp/view?usp=sharing]
+[https://drive.google.com/file/d/1lR0PxaF22I7pV1q1Mzi6vW81VQuirQtz/view?usp=drive_link]
 
 
 
