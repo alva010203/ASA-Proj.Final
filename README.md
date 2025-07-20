@@ -1,52 +1,125 @@
-### 🐳 Asa-Entrega-Provedor
+# 🐳 Asa-Entrega-Provedor
 
-Esta entrega consiste na implementação da estrutura de um provedor de serviços, utilizando o proxy reverso Traefik para gerenciamento de tráfego, disponibilizando serviços de e-mail e portal institucional.
+Este projeto consiste na implementação completa de um **provedor de serviços** com seus **clientes associados**, utilizando o proxy reverso **Traefik** para gerenciamento de tráfego, além de disponibilizar serviços de **DNS**, **e-mail**, **webmail** e **portais institucionais**.
+
 
 
 ---
 
-### Estrutura do provedor:
+## 📝 Visão geral do projeto
 
-Provedor/
+🔧 **Estrutura final prevista:**
+
+### 🖥️ Provedor
+
+Responsável por gerenciar:
+
+- **DNS**
+- **E-mail** (Postfix) e **Webmail** (Dovecot + Roundcube)
+- **Proxy reverso Traefik**
+- **Certificados SSL/TLS** para os clientes
+- Portal institucional próprio
+
+### 🌐 Clientes
+
+Serão **3 clientes distintos**, cada um com:
+
+- Seu **próprio proxy reverso**, configurado de maneira diferente
+- **Portal institucional exclusivo**
+- **Sites ou sistemas próprios**
+- Integração com o **provedor** para:
+  - Resolução de nomes via DNS
+  - Utilização dos serviços disponibilizados
+
+---
+
+## 🚀 Etapas do projeto
+
+✅ **Etapa 1 - Provedor**
+
+Implementação da estrutura do **provedor de serviços**, incluindo:
+
+- Configuração do **Traefik** como proxy reverso
+- Implementação do **servidor DNS** com zona `asa.br`
+- Implementação do **servidor de e-mail** (Postfix + Dovecot)
+- Configuração do **Webmail**
+- Criação do **portal institucional** do provedor
+- Geração e aplicação de certificados **SSL/TLS**
+
+✅ **Etapa 2 - Cliente 1**
+
+Criação da estrutura do **cliente01**, contendo:
+
+- Portal institucional do cliente
+- Proxy reverso local no cliente
+- **Hotsite**
+- **Sign** para assinatura de documentos
+- Integração completa com o provedor via DNS
 
 
-├── dns/
+---
 
-│   ├── db.asa.br
+## 📁 Estrutura de diretórios
 
-│   ├── Dockerfile
-
-
-│   └── named.conf.local
-
-
-├── email/
-
-
-├── letsencrypt/
-
-│   └── acme.json
-
-
-├── proxy/html/
-
-
-├── web/
-
-│   ├── Dockerfile
-
-│   └── index.html
-
-
-├── webmail/
-
-│   ├── config.inc.
-
-│   └── Dockerfile
-
-
-├── compose.yaml
-
+```bash
+.
+├── cliente01
+│   ├── compose.yaml
+│   ├── portal/
+│   │   ├── Dockerfile
+│   │   └── index.html
+│   ├── proxy/
+│   │   ├── default.conf
+│   │   ├── Dockerfile
+│   │   └── index.html
+│   └── web02/
+│       ├── Dockerfile
+│       ├── favicon.ico
+│       ├── index.html
+│       └── style.css
+├── provedor
+│   ├── certs/
+│   │   ├── cliente1.crt
+│   │   ├── cliente1.key
+│   │   ├── selfsigned.crt
+│   │   └── selfsigned.key
+│   ├── compose.yaml
+│   ├── dns/
+│   │   ├── db.asa.br
+│   │   ├── db.cliente1.br
+│   │   ├── Dockerfile
+│   │   └── named.conf.local
+│   ├── dynamic.yml
+│   ├── email/
+│   │   ├── Dockerfile
+│   │   ├── dovecot_conf/
+│   │   │   ├── conf.d/
+│   │   │   │   ├── 10-auth.conf
+│   │   │   │   ├── 10-mail.conf
+│   │   │   │   └── 10-master.conf
+│   │   │   └── dovecot.conf
+│   │   ├── mail_data/
+│   │   │   ├── cara/
+│   │   │   │   └── Maildir/
+│   │   │   └── coroa/
+│   │   │       └── Maildir/
+│   │   ├── main.cf
+│   │   ├── ssl/
+│   │   │   ├── mail.key
+│   │   │   └── mail.pem
+│   │   └── start.sh
+│   ├── proxy/
+│   │   └── html/
+│   │       └── index.html
+│   ├── traefik.yml
+│   ├── web/
+│   │   ├── Dockerfile
+│   │   └── index.html
+│   └── webmail/
+│       ├── config.inc.php
+│       └── Dockerfile
+└── README.md
+```
 
 ---
 
@@ -55,19 +128,19 @@ Provedor/
 
 -[alva010203](https://github.com/alva010203) - **Álvaro Augusto Pinheiro** 
 
-Atribuição: Proxy reverso
+Atribuição: Proxy reverso Traefik / Hotsite
 
 -[Jaiir0](https://github.com/Jaiir0) - **Jairo Bezerra de Araujo**
 
-Atribuição: Email/Webmail
+Atribuição: Email/Webmail / Sign
 
 -[yanmaia](https://github.com/yanmaia) - **Yan Ferreira Maia**
 
-Atribuição: Portal
+Atribuição: Portal / Proxy Nginx
 
 -[Jordanjuliobr23](https://github.com/Jordanjuliobr23) - **Jordan julio**
 
-Atribuição: DNS
+Atribuição: DNS / Portal
 
 ---
 
