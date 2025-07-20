@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetIFRN - Provedor de Internet</title>
+    <meta name="description" content="Provedor de internet regional nascido dentro do ambiente acadêmico do IFRN">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00833E", // Verde IFRN
+                        secondary: "#F5A623", // Amarelo-ouro
+                        light: "#F8F9FA",
+                        dark: "#212529"
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 30px -15px rgba(0, 0, 0, 0.2)',
+                        'hard': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 131, 62, 0.9), rgba(0, 131, 62, 0.95)), 
+                        url('https://picsum.photos/1920/1080?random=1&blur=2');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background-color: #F5A623;
+            transition: width 0.4s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #00833E 0%, #006B33 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 131, 62, 0.2);
+        }
+        .btn-secondary {
+            background: linear-gradient(135deg, #F5A623 0%, #E6951F 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 166, 35, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans bg-white text-gray-800 antialiased">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="flex items-center justify-center w-10 h-10 bg-primary text-white rounded-lg font-bold text-xl">
+                        IF
+                    </div>
+                    <span class="text-xl font-bold text-primary">NetIFRN</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-20 text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">NetIFRN</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed">
+                "A NetIFRN é um provedor regional nascido dentro do ambiente acadêmico do IFRN, com o objetivo de entregar soluções técnicas robustas. Somos especializados em soluções digitais modernas, estáveis e seguras."
+            </p>
+            <a href="#solucoes" class="btn-primary text-white px-10 py-4 rounded-lg text-lg font-medium inline-block">
+                Conheça Nossas Soluções
+                <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Soluções Section -->
+    <section id="solucoes" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Nossas Soluções</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    "Conheça os serviços que oferecemos como parte do pacote tecnológico da NetIFRN:"
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-soft transition-all duration-300 card-hover">
+                    <div class="text-5xl text-primary mb-6 flex justify-center">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">DNS</h3>
+                    <p class="text-gray-600 text-center">
+                        "Serviço de resolução de nomes com infraestrutura estável, segura e de fácil gerenciamento."
+                    </p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-soft transition-all duration-300 card-hover">
+                    <div class="text-5xl text-primary mb-6 flex justify-center">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Proxy Reverso</h3>
+                    <p class="text-gray-600 text-center">
+                        "Distribuição inteligente de aplicações web com proteção, roteamento dinâmico e escalabilidade."
+                    </p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-soft transition-all duration-300 card-hover">
+                    <div class="text-5xl text-primary mb-6 flex justify-center">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">E-mail Corporativo</h3>
+                    <p class="text-gray-600 text-center">
+                        "Solução de e-mail personalizada com gerenciamento próprio, autenticação segura e controle de domínio."
+                    </p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-soft transition-all duration-300 card-hover">
+                    <div class="text-5xl text-primary mb-6 flex justify-center">
+                        <i class="fas fa-inbox"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Webmail</h3>
+                    <p class="text-gray-600 text-center mb-6">
+                        "Interface web intuitiva para acesso aos e-mails de qualquer lugar, com suporte IMAP/SMTP."
+                    </p>
+                    <a href="https://webmail.asa.br" target="_blank" class="btn-secondary text-white px-6 py-2 rounded-lg font-medium transition block text-center">
+                        Acessar Webmail
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipe Section -->
+    <section id="equipe" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Nossa Equipe</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Membro 1 - Álvaro -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-soft text-center transition-all duration-300 card-hover">
+                    <img src="https://avatars.githubusercontent.com/u/165521280?v=4" alt="Álvaro" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-hard">
+                    <h3 class="text-xl font-bold mb-2">Álvaro</h3>
+                    <p class="text-gray-600 mb-4">Desenvolvedor</p>
+                    <a href="https://github.com/alva010203" target="_blank" class="text-primary hover:text-secondary transition">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                </div>
+                
+                <!-- Membro 2 - Jairo -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-soft text-center transition-all duration-300 card-hover">
+                    <img src="https://avatars.githubusercontent.com/u/164819215?v=4" alt="Jairo" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-hard">
+                    <h3 class="text-xl font-bold mb-2">Jairo</h3>
+                    <p class="text-gray-600 mb-4">Desenvolvedor</p>
+                    <a href="https://github.com/Jaiir0" target="_blank" class="text-primary hover:text-secondary transition">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                </div>
+                
+                <!-- Membro 3 - Jordan -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-soft text-center transition-all duration-300 card-hover">
+                    <img src="https://avatars.githubusercontent.com/u/164351071?v=4" alt="Jordan" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-hard">
+                    <h3 class="text-xl font-bold mb-2">Jordan</h3>
+                    <p class="text-gray-600 mb-4">Desenvolvedor</p>
+                    <a href="https://github.com/Jordanjuliobr23" target="_blank" class="text-primary hover:text-secondary transition">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                </div>
+                
+                <!-- Membro 4 - Yan -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-soft text-center transition-all duration-300 card-hover">
+                    <img src="https://avatars.githubusercontent.com/u/31291355?v=4" alt="Yan" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-hard">
+                    <h3 class="text-xl font-bold mb-2">Yan</h3>
+                    <p class="text-gray-600 mb-4">Desenvolvedor</p>
+                    <a href="https://github.com/yanmaia" target="_blank" class="text-primary hover:text-secondary transition">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Contato</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Endereço -->
+                <div class="text-center">
+                    <div class="text-4xl mb-4 text-secondary">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Endereço</h3>
+                    <p>Av. Sen. Salgado Filho, 1559 – Tirol, Natal – RN, 59015-000</p>
+                </div>
+                
+                <!-- Telefone -->
+                <div class="text-center">
+                    <div class="text-4xl mb-4 text-secondary">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Telefone</h3>
+                    <p>(84) 99999-0000</p>
+                </div>
+                
+                <!-- Email -->
+                <div class="text-center">
+                    <div class="text-4xl mb-4 text-secondary">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">E-mail</h3>
+                    <p>contato@netifrn.com.br</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="flex items-center justify-center w-10 h-10 bg-primary text-white rounded-lg font-bold text-xl">
+                        IF
+                    </div>
+                    <span class="text-xl font-bold text-white">NetIFRN</span>
+                </div>
+                <p class="text-gray-400 text-sm">© 2025 NetIFRN – Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

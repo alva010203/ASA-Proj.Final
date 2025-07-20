@@ -1,0 +1,59 @@
+tls:
+  certificates:
+    - certFile: "/certs/selfsigned.crt"
+      keyFile: "/certs/selfsigned.key"
+    - certFile: "/certs/cliente1.crt"    # seu cert autoassinado para cliente1
+      keyFile: "/certs/cliente1.key" 
+http:
+  routers:
+    redirect-all:
+      entryPoints:
+        - web
+      rule: "HostRegexp(`{host:.+}`)"     #redireciona todas as requisições HTTP para HTTPS
+      middlewares:
+        - redirect-to-https
+      service: noop 
+
+    www-cliente1:
+      rule: "Host(`www.cliente1.br`)"
+      service: cliente1-proxy
+      entryPoints:
+        - websecure
+      tls: {}
+
+    portal-cliente1:
+      rule: "Host(`portal.cliente1.br`)"
+      service: cliente1-proxy
+      entryPoints:
+        - websecure
+      tls: {}
+
+    hotsite-cliente1:
+      rule: "Host(`hotsite.cliente1.br`)"
+      service: cliente1-proxy
+      entryPoints:
+        - websecure
+      tls: {}
+
+    sign-cliente1:
+      rule: "Host(`sign.cliente1.br`)"
+      service: cliente1-proxy
+      entryPoints:
+        - websecure
+      tls: {}
+      
+  middlewares:
+    redirect-to-https:
+      redirectScheme:
+        scheme: https
+
+  services:
+    cliente1-proxy:
+      loadBalancer:
+        servers:
+
+          - url: "http://proxy:80"  
+    noop:
+      loadBalancer:
+        servers:
+          - url: "http://127.0.0.1"
