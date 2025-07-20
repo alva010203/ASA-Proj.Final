@@ -1,22 +1,17 @@
 # Base da imagem
 FROM ubuntu:latest 
 
-# O comando RUN serve para executar um comando na imagem
-# Nesse caso abaixo, estamos atualizando repositórios de pacotes
-RUN apt update -y 
-
-# Abaixo, estamos atualizando os pacotes constantes na imagem
-RUN apt install bind9 dnsutils -y
+RUN apt-get update -y && \
+    apt-get install -y --fix-missing && \
+    apt-get install -y bind9 dnsutils && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Copia arquivo para dentro da imagem
 COPY named.conf.local /etc/bind
-
 COPY db.asa.br /etc/bind
 COPY db.cliente1.br /etc/bind
 
 
-# Todo container docker precisa de um ponto de entrada/execução para 
-# manter o container em funcionamento
 # ENTRYPOINT [ "executable" ]
 # No caso abaixo, o serviço chamado named (bind) é executado em primeiro plano
 EXPOSE 5353/tcp
