@@ -1,60 +1,154 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSM</title>
+    <title>Apache</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
         }
-
-        
-        body {
-            height: 100vh;
-            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-
-        
-        .container {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 50px 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            backdrop-filter: blur(8px);
-            animation: fadeIn 1s ease-out;
-        }
-
-        .container h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-        }
-
-        .container p {
-            font-size: 1.3em;
-            opacity: 0.9;
-        }
-
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .transition-all {
+            transition: all 0.3s ease;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>CSM</h1>
-    </div>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-black text-white shadow-lg">
+        <div class="container mx-auto px-4 py-8">
+            <h1 class="text-4xl text-orange-500 md:text-5xl font-bold text-center mb-2">Apache</h1>
+        </div>
+    </header>
+
+    <!-- Sobre Section -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2">
+                <img src="https://imgs.search.brave.com/KqbhkloXS1jKxBWKUvwky1e9nX1Y09Y13FNlkOY3LCo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/ZGl4LmNvbS9sb2dv/LzEwNTc4MTgucG5n" 
+                     alt="Nginx 20 anos" 
+                     class="rounded-full shadow-xl w-64 h-64 object-cover transition-all hover:shadow-2xl mx-auto">
+            </div>
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl font-bold text-orange-500 mb-6">Proxy Reverso Apache</h2>
+                <p class="text-gray-900 mb-4 leading-relaxed">
+                    O serviço de proxy reverso Apache atua roteando os serviços internos, como aplicações WordPress, para o proxy reverso principal, o Traefik. Essa arquitetura permite centralizar o gerenciamento de rotas e facilita o controle de tráfego entre os serviços. A segurança da comunicação é garantida por meio de um certificado SSL autoassinado, que permite o uso de HTTPS, protegendo os dados transmitidos mesmo em ambientes fechados ou de desenvolvimento.
+                </p>
+              
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-orange-500 mb-16">Benefícios do Proxy Reverso Apache</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Proteção SSL</h3>
+                    <p class="text-gray-600">Criptografia para comunicações entre clientes e servidores.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Compatibilidade </h3>
+                    <p class="text-gray-600">Devido a sua fama o apache tem uma vasta compatibilidade</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Isolamento de Rede</h3>
+                    <p class="text-gray-600">Isola os constainer da rede interna, fazendo a requisições de url diretamente pelo proxy.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Logs Detalhados</h3>
+                    <p class="text-gray-600">Gera logs detalhados de acesso e erros, úteis para auditoria, rastreamento de falhas e otimização de desempenho.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Open Source</h3>
+                    <p class="text-gray-600">Solução robusta e gratuita com suporte da comunidade e versão empresarial.</p>
+                </div>
+
+              
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- WordPress Card -->
+            <div class="bg-gradient-to-br from-red-50 to-red-100 border border-red-200 rounded-xl p-6 shadow-md transition-all card-hover">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fab fa-wordpress text-red-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-red-800">Site WordPress</h3>
+                </div>
+                <p class="text-gray-700 mb-6">
+                    Plataforma de gerenciamento de conteúdo WordPress para criação de sites completos.
+                    Solução flexível com milhares de temas e plugins para diversas necessidades.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-sm">WordPress</span>
+                    <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-sm">CMS</span>
+                    <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-sm">Responsivo</span>
+                </div>
+                <a href="wordpress.cliente2.br" class="mt-6 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition-all inline-block">
+                    Acesse
+                </a>
+            </div>
+            
+            <!-- WordPress Admin Card -->
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-xl p-6 shadow-md transition-all card-hover">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-cogs text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-800">Painel Admin WordPress</h3>
+                </div>
+                <p class="text-gray-700 mb-6">
+                    Área administrativa do WordPress para gerenciamento completo do site.
+                    Crie conteúdos, instale plugins, gerencie usuários e personalize seu site.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm">WordPress</span>
+                    <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm">Dashboard</span>
+                    <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm">Admin</span>
+                </div>
+                <a href="adminer.cliente2.br" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-all inline-block">
+                    Acesse
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">Proxy Reverso Apache</h3>
+                </div>
+            </div>
+            <div class="border-t border-orange-500 mt-6 pt-6 text-center text-blue-100">
+                <p>&copy; 2025 Proxy Reverso Apache.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
