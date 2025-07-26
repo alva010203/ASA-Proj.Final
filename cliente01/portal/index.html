@@ -1,216 +1,162 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Cliente 1</title>
-  <meta name="description" content="Portal oficial do Cliente 1 - Soluções digitais personalizadas.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
- <script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primary: "#1E3A8A", // Azul Escuro
-          secondary: "#FACC15", // Amarelo Mostarda
-          light: "#F3F4F6", // Cinza Claro
-          medium: "#9CA3AF", // Cinza Médio
-          accent: "#10B981" // Verde Esmeralda
-        },
-        fontFamily: {
-          sans: ['Poppins', 'sans-serif']
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nginx</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
         }
-      }
-    }
-  }
-</script>
-<style>
-  html { scroll-behavior: smooth; }
-  .hero-section {
-    background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.95)), url('https://picsum.photos/1920/1080?random=2&blur=3');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
-</style>
-<body class="font-sans bg-light text-medium antialiased">
-
-  <!-- Header -->
-  <header class="fixed w-full bg-white shadow-md z-50">
-    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-      <div class="flex items-center space-x-2">
-        <div class="flex items-center justify-center w-10 h-10 bg-primary text-white rounded-lg font-bold text-xl">C1</div>
-        <span class="text-xl font-bold text-primary">Cliente 1</span>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero-section min-h-screen flex items-center pt-20">
-    <div class="container mx-auto px-6 py-20 text-center text-white">
-      <h1 class="text-5xl font-bold mb-6">Bem-vindo ao Portal Cliente 1</h1>
-      <p class="text-xl max-w-3xl mx-auto mb-10">Acesse seus serviços digitais de forma rápida, segura e integrada.</p>
-      <a href="#servicos" class="bg-secondary hover:bg-green-500 text-white px-8 py-4 rounded-lg font-medium text-lg">
-        Ver Serviços 
-        <i class="fas fa-arrow-down ml-2"></i>
-      </a>
-    </div>
-  </section>
-
- <!-- Serviços -->
-<section id="servicos" class="py-20 bg-gray-50">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Nossas Soluções</h2>
-      <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-      <p class="text-xl text-blue-600 max-w-2xl mx-auto">
-        "Conheça os serviços que oferecemos como parte do pacote tecnológico da NetIFRN:"
-      </p>
-    </div>
-  
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="bg-white p-6 rounded-xl shadow-lg">
-        <i class="fas fa-server text-4xl text-primary mb-4"></i>
-        <h3 class="text-xl font-bold mb-2 text-primary">DNS</h3> <!-- Alterado para azul escuro -->
-        <p class="text-blue-600 mb-4">"Serviço de resolução de nomes com infraestrutura estável, segura e de fácil gerenciamento."</p>
-      </div>
-  
-      <div class="bg-white p-6 rounded-xl shadow-lg">
-        <i class="fas fa-random text-4xl text-primary mb-4"></i>
-        <h3 class="text-xl font-bold mb-2 text-primary">Proxy Reverso</h3> <!-- Alterado para azul escuro -->
-        <p class="text-blue-600 mb-4">"Distribuição inteligente de aplicações web com proteção, roteamento dinâmico e escalabilidade."</p>
-      </div>
-  
-      <div class="bg-white p-6 rounded-xl shadow-lg">
-        <i class="fas fa-globe-americas text-4xl text-primary mb-4"></i>
-        <h3 class="text-xl font-bold mb-2 text-primary">Hotsite</h3> <!-- Alterado para azul escuro -->
-        <p class="text-blue-600 mb-4">"Tenha uma página exclusiva para divulgar eventos, campanhas ou informações importantes <br> de forma rápida e personalizada."</p>
-        <a href="https://hotsite.cliente1.br" target="_blank" class="text-secondary underline">Acessar</a>
-      </div>
-  
-      <div class="bg-white p-6 rounded-xl shadow-lg">
-        <i class="fas fa-pen-fancy text-4xl text-primary mb-4"></i>
-        <h3 class="text-xl font-bold mb-2 text-primary">Sign</h3> <!-- Alterado para azul escuro -->
-        <p class="text-blue-600 mb-4">"Assine documentos eletronicamente com validade jurídica,<br> segurança e praticidade, eliminando a necessidade de papel."</p>
-        <a href="https://sign.cliente1.br" target="_blank" class="text-secondary underline">Assinar</a>
-      </div>
-    </div>
-  </section>
-
-<!-- Equipe -->
-<section class="py-20 bg-white">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-primary mb-10">Equipe Técnica</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-  
-        <div class="bg-black-100 p-6 rounded-xl">
-          <img src="https://avatars.githubusercontent.com/u/165521280?v=4" class="w-24 h-24 rounded-full mx-auto mb-4" />
-          <h3 class="font-bold text-primary">Álvaro</h3> <!-- Alterado para azul escuro -->
-          <p>Desenvolvedor</p>
-          <a href="https://github.com/alva010203" target="_blank" class="text-primary"><i class="fab fa-github text-xl"></i></a>
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-black text-white shadow-lg">
+        <div class="container mx-auto px-4 py-8">
+            <h1 class="text-4xl text-green-500 md:text-5xl font-bold text-center mb-2">Nginx</h1>
         </div>
-  
-        <div class="bg-black-100 p-6 rounded-xl">
-          <img src="https://avatars.githubusercontent.com/u/164819215?v=4" class="w-24 h-24 rounded-full mx-auto mb-4" />
-          <h3 class="font-bold text-primary">Jairo</h3> <!-- Alterado para azul escuro -->
-          <p>Desenvolvedor</p>
-          <a href="https://github.com/Jaiir0" target="_blank" class="text-primary"><i class="fab fa-github text-xl"></i></a>
-        </div>
-  
-        <div class="bg-black-100 p-6 rounded-xl">
-          <img src="https://avatars.githubusercontent.com/u/164351071?v=4" class="w-24 h-24 rounded-full mx-auto mb-4" />
-          <h3 class="font-bold text-primary">Jordan</h3> <!-- Alterado para azul escuro -->
-          <p>Desenvolvedor</p>
-          <a href="https://github.com/Jordanjuliobr23" target="_blank" class="text-primary"><i class="fab fa-github text-xl"></i></a>
-        </div>
-  
-        <div class="bg-black-100 p-6 rounded-xl">
-          <img src="https://avatars.githubusercontent.com/u/31291355?v=4" class="w-24 h-24 rounded-full mx-auto mb-4" />
-          <h3 class="font-bold text-primary">Yan</h3> <!-- Alterado para azul escuro -->
-          <p>Desenvolvedor</p>
-          <a href="https://github.com/yanmaia" target="_blank" class="text-primary"><i class="fab fa-github text-xl"></i></a>
-        </div>
-  
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Contato -->
-  <section id="contato" class="py-20 bg-primary text-white">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Contato</h2>
-            <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-        </div>
-        
-        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Endereço -->
-            <div class="text-center">
-                <div class="text-4xl mb-4 text-secondary">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Endereço</h3>
-                <p>Av. Sen. Salgado Filho, 1559 – Tirol, Natal – RN, 59015-000</p>
+    <!-- Sobre Section -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2">
+                <img src="https://imgs.search.brave.com/QO1NnBxXqKLIqCWRXzve2yUD8-csByDNSNv0tepUn8c/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9uZ2lu/eGJsb2ctOGRlMTA0/NmZmNWE4NGYyYy1l/bmRwb2ludC5henVy/ZWVkZ2UubmV0L2Js/b2JuZ2lueGJsb2dh/NzJjZGU0ODdlL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI0LzEw/L0NlbGVicmF0aW5n/LTIwLVllYXJzLW9m/LU5HSU5YLnBuZw" 
+                     alt="Nginx 20 anos" 
+                     class="rounded-full shadow-xl w-64 h-64 object-cover transition-all hover:shadow-2xl mx-auto">
             </div>
-            
-            <!-- Telefone -->
-            <div class="text-center">
-                <div class="text-4xl mb-4 text-secondary">
-                    <i class="fas fa-phone-alt"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Telefone</h3>
-                <p>(84) 99999-0000</p>
-            </div>
-            
-            <!-- Email -->
-            <div class="text-center">
-                <div class="text-4xl mb-4 text-secondary">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">E-mail</h3>
-                <p>contato@netifrn.com.br</p>
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl font-bold text-green-500 mb-6">Proxy Reverso Nginx</h2>
+                <p class="text-gray-900 mb-4 leading-relaxed">
+                    O serviço de proxy reverso Nginx atua roteando as aplicações web internas para o proxy reverso principal, o Traefik. Essa arquitetura permite centralizar o gerenciamento de rotas e facilita o controle de tráfego entre os serviços. A segurança da comunicação é garantida por meio de um certificado SSL autoassinado, que permite o uso de HTTPS, protegendo os dados transmitidos mesmo em ambientes fechados ou de desenvolvimento.
+                </p>
+                <p class="text-gray-900 mb-4 leading-relaxed">
+                    Como proxy reverso, o Nginx atua como um intermediário entre os clientes e os servidores de backend, melhorando a segurança, 
+                    desempenho e confiabilidade das aplicações web. 
+                </p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-<!-- Footer -->
-<footer class="bg-dark text-white py-12">
-    <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center space-x-2 mb-4 md:mb-0">
-                <div class="flex items-center justify-center w-10 h-10 bg-primary text-white rounded-lg font-bold text-xl">
-                    IF
+    <!-- Benefícios Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-green-500 mb-16">Benefícios do Proxy Reverso Nginx</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Proteção SSL</h3>
+                    <p class="text-gray-600">Criptografia para comunicações entre clientes e servidores.</p>
                 </div>
-                <span class="text-xl font-bold text-white">NetIFRN</span>
-            </div>
-            <p class="text-gray-400 text-sm">© 2025 NetIFRN – Todos os direitos reservados.</p>
-        </div>
-    </div>
-</footer>
 
-<script>
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Balanceamento de Carga</h3>
+                    <p class="text-gray-600">Distribuição de tráfego</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Isolamento de Rede</h3>
+                    <p class="text-gray-600">Isola os constainer da rede interna, fazendo a requisições de url diretamente pelo proxy.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Cache Eficiente</h3>
+                    <p class="text-gray-600">Guarda o cache de aplicações ja rodadas.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Open Source</h3>
+                    <p class="text-gray-600">Solução robusta e gratuita com suporte da comunidade e versão empresarial.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Alta Escalabilidade</h3>
+                    <p class="text-gray-600">Capacidade para lidar com milhares de conexões simultâneas com baixo consumo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Hotsite Card -->
+            <div class="bg-gradient-to-br from-red-50 to-red-100 border border-red-200 rounded-xl p-6 shadow-md transition-all card-hover">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-tint text-red-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-red-800">Hotsite: Doação de Sangues</h3>
+                </div>
+                <p class="text-gray-700 mb-6">
+                    Plataforma dedicada à conscientização e agendamento de doações de sangue. 
+                    Utilize o poder do Nginx para garantir alta disponibilidade e desempenho 
+                    para esta causa tão importante.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-sm">Nginx</span>
+                    <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-sm">SSL</span>
+                    <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-sm">Responsivo</span>
+                </div>
+                <a href="https://hotsite.cliente1.br" class="mt-6 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition-all inline-block">
+                    Acesse
+                </a>
+            </div>
             
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-</script>
+            <!-- Sign Card -->
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-xl p-6 shadow-md transition-all card-hover">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-signature text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-800">Sign: Assinatura Digital de Documentos</h3>
+                </div>
+                <p class="text-gray-700 mb-6">
+                    Solução segura para assinatura digital de documentos com validade jurídica. 
+                    O proxy reverso Nginx garante a segurança das transações e a proteção dos 
+                    dados sensíveis dos usuários.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm">Nginx</span>
+                    <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm">HTTPS</span>
+                </div>
+                <a href="https://sign.cliente1.br" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-all inline-block">
+                    Acesse
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">Proxy Reverso Nginx</h3>
+                </div>
+            </div>
+            <div class="border-t border-green-500 mt-6 pt-6 text-center text-blue-100">
+                <p>&copy; 2025 Proxy Reverso Nginx.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
