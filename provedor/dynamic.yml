@@ -17,7 +17,7 @@ http:
     www-cliente1:
       rule: "Host(`www.cliente1.br`)"
       service: cliente1-proxy
-      entryPoints:
+      entryPoints: 
         - websecure
       tls: {}
 
@@ -41,7 +41,35 @@ http:
       entryPoints:
         - websecure
       tls: {}
-      
+   
+    www-cliente2:
+      rule: "Host(`www.cliente2.br`)"
+      service: cliente2-proxy
+      entryPoints:
+        - websecure
+      tls: {}
+
+    portal-cliente2:
+      rule: "Host(`portal.cliente2.br`)"
+      service: cliente2-proxy
+      entryPoints:
+        - websecure
+      tls: {}
+
+    wordpress-cliente2:
+      rule: "Host(`wordpress.cliente2.br`)"
+      service: cliente2-proxy
+      entryPoints:
+        - websecure
+      tls: {}
+   
+    adminer-cliente2:
+      rule: "Host(`adminer.cliente2.br`)"
+      service: cliente2-proxy
+      entryPoints:
+        - websecure
+      tls: {}
+
   middlewares:
     redirect-to-https:
       redirectScheme:
@@ -51,8 +79,11 @@ http:
     cliente1-proxy:
       loadBalancer:
         servers:
-
-          - url: "http://proxy:80"  
+          - url: "http://proxy:80"
+    cliente2-proxy:
+      loadBalancer:
+        servers:
+          - url: "http://apache_proxy:80"  
     noop:
       loadBalancer:
         servers:
