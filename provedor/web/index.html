@@ -1,303 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <base target="_self">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NetIFRN - Provedor de Internet</title>
-    <meta name="description" content="Provedor de internet regional nascido dentro do ambiente acadêmico do IFRN">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Provedor</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#00833E", // Verde IFRN
-                        secondary: "#F5A623", // Amarelo-ouro
-                        light: "#F8F9FA",
-                        dark: "#212529"
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif']
-                    },
-                    boxShadow: {
-                        'soft': '0 10px 30px -15px rgba(0, 0, 0, 0.2)',
-                        'hard': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .hero-section {
-            background: linear-gradient(rgba(0, 131, 62, 0.9), rgba(0, 131, 62, 0.95)), 
-                        url('https://picsum.photos/1920/1080?random=1&blur=2');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
         .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: -5px;
-            left: 0;
-            background-color: #F5A623;
-            transition: width 0.4s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #00833E 0%, #006B33 100%);
+        .card-transition {
             transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 131, 62, 0.2);
-        }
-        .btn-secondary {
-            background: linear-gradient(135deg, #F5A623 0%, #E6951F 100%);
-            transition: all 0.3s ease;
-        }
-        .btn-secondary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(245, 166, 35, 0.2);
         }
     </style>
 </head>
-<body class="font-sans bg-white text-gray-800 antialiased">
-    <!-- Header -->
-    <header class="fixed w-full bg-white shadow-md z-50">
-        <nav class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <div class="flex items-center space-x-2">
-                    <div class="flex items-center justify-center w-10 h-10 bg-primary text-white rounded-lg font-bold text-xl">
-                        IF
-                    </div>
-                    <span class="text-xl font-bold text-primary">NetIFRN</span>
+<body class="bg-white min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="mb-10 text-center">
+            <h1 class="text-4xl font-bold text-blue-900 mb-2"> Anti-windows</h1>
+            <p class="text-gray-800">Provedor de serviços</p>
+        </header>
+
+     
+
+        <!-- Quem Somos Section -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden mb-10 border border-gray-200">
+            <div class="flex flex-col md:flex-row">
+                <div class="p-8 md:w-1/2">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6 m">Quem Somos</h2>
+                    <p class="text-gray-800 mb-4">
+                        Somos a equipe Anti-Windows, um grupo de estudantes do IFRN que se uniu para desenvolver uma completa estrutura de serviços de proxy, e faremos valer a pena a sua escolha!
+                    </p>
+                      <p class="text-gray-800 mb-4">
+                        Desenvolvemos aplicações sob medida com um provedor robusto e simples, capaz de redirecionar múltiplos clientes em uma estrutura de containers. Nossa filosofia é pautada no trabalho transparente e coletivo.    
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex items-center justify-center p-8">
+                    <img src=https://imgs.search.brave.com/30Q6kfhneeTpD_CUt_1PRbWuLXE1JHsy26LjOEaVAas/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvaHVt/dXJvdXMtdHV4LWxp/bnV4LWRlc2t0b3At/Z3JhcGhpYy1kZXNp/Z24tZTkzaDJraDd4/a25icWUxMi5qcGc alt="Linux vs Windows" class="rounded-full w-96 h-96 object-cover border-6 border-blue-400">
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero-section min-h-screen flex items-center pt-20">
-        <div class="container mx-auto px-6 py-20 text-center text-white">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">NetIFRN</h1>
-            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed">
-                "A NetIFRN é um provedor regional nascido dentro do ambiente acadêmico do IFRN, com o objetivo de entregar soluções técnicas robustas. Somos especializados em soluções digitais modernas, estáveis e seguras."
-            </p>
-            <a href="#solucoes" class="btn-primary text-white px-10 py-4 rounded-lg text-lg font-medium inline-block">
-                Conheça Nossas Soluções
-                <i class="fas fa-arrow-down ml-2"></i>
+                <!-- Dashboard Cards -->
+        <h2 class="text-2xl font-bold text-blue-900 mb-6">Serviços</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Cliente 1 Card -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-transition card-hover border border-gray-200">
+            <div class="p-6">
+            <div class="flex items-center mb-4">
+                <div class="bg-gray 200 p-3 rounded-full mr-4">
+                <i class="fas fa-user text-blue-900 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800">Cliente 1</h3>
+            </div>
+            <p class="text-gray-800 mb-4">Acesse o Cliente 1</p>
+            <a href="https://portal.cliente1.br" target="_blank" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition">
+                Acessar
             </a>
-        </div>
-    </section>
-
-    <!-- Soluções Section -->
-    <section id="solucoes" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Nossas Soluções</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    "Conheça os serviços que oferecemos como parte do pacote tecnológico da NetIFRN:"
-                </p>
             </div>
+        </div>
+
+        <!-- Cliente 2 Card -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-transition card-hover border border-gray-200">
+            <div class="p-6">
+            <div class="flex items-center mb-4">
+                <div class="bg-bg-gray 200 p-3 rounded-full mr-4">
+                <i class="fas fa-user-friends text-blue-900 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800">Cliente 2</h3>
+            </div>
+            <p class="text-gray-800 mb-4">Acesse o Cliente 2</p>
+            <a href="https://portal.cliente2.br" target="_blank" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition">
+                Acessar
+            </a>
+            </div>
+        </div>
+
+        <!-- Cliente 3 Card -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-transition card-hover border border-gray-200">
+            <div class="p-6">
+            <div class="flex items-center mb-4">
+                <div class="bg-bg-gray 200 p-3 rounded-full mr-4">
+                <i class="fas fa-users text-blue-900 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800">Cliente 3</h3>
+            </div>
+            <p class="text-gray-800 mb-4">Acesse o Cliente 3</p>
+            <a href="https://www.asa.br" target="_blank" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition">
+                Acessar
+            </a>
+            </div>
+        </div>
+
+        <!-- Email Institucional Card -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-transition card-hover border border-gray-200">
+            <div class="p-6">
+            <div class="flex items-center mb-4">
+                <div class="bg-bg-gray 200 p-3 rounded-full mr-4">
+                <i class="fas fa-envelope text-blue-900 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800">Email Institucional</h3>
+            </div>
+            <p class="text-gray-800 mb-4">Acesse o email corporativo</p>
+            <a href="https://webmail.asa.br" target="_blank" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition">
+                Acessar
+            </a>
+            </div>
+        </div>
+
+        </div>
+
+
+        <!-- Proxy Reverse Solutions -->
+        <div class="mt-12 bg-white rounded-xl shadow-md p-6 border border-gray-200">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Soluções de Proxy Reverso</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-soft transition-all duration-300 card-hover">
-                    <div class="text-5xl text-primary mb-6 flex justify-center">
-                        <i class="fas fa-server"></i>
+            <!-- Traefik -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-transition card-hover p-6 mb-6 border border-gray-200">
+                <div class="flex items-center mb-4">
+                    <div class="mr-4">
+                        <img src="https://imgs.search.brave.com/ZLtyIYe2DJ82Rx8nv_6S7IN-6GRKdmH8-n5CsSkUNVE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzQzLzEvdHJhZWZp/ay1sb2dvLXBuZ19z/ZWVrbG9nby00MzQx/NjQucG5n" alt="Traefik Logo" class="h-12">
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-center">DNS</h3>
-                    <p class="text-gray-600 text-center">
-                        "Serviço de resolução de nomes com infraestrutura estável, segura e de fácil gerenciamento."
-                    </p>
+                    <h3 class="text-xl font-semibold text-gray-800">Traefik</h3>
                 </div>
+                <p class="text-gray-800 mb-4">O Traefik é um proxy reverso moderno e balanceador de carga que facilita o roteamento de serviços. Ele se integra perfeitamente com orquestradores de containers como Docker e Kubernetes, oferecendo configuração automática e descoberta de serviços. Ideal para ambientes de microsserviços e implantação contínua.</p>
+               
+            </div>
+        
+
+            <!-- Nginx -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-transition card-hover p-6 mb-6 border border-gray-200">
+                <div class="flex items-center mb-4">
+                    <div class="mr-4">
+                        <img src="https://imgs.search.brave.com/3oZr-kE7TWwpIUlqyAlvdwef9HAXuAwga5bjhIOFiiQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIwLzA4/L05naW54LUxvZ28t/NTAweDMxMy5qcGc" alt="Nginx Logo" class="h-12">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Nginx</h3>
+                </div>
+                <p class="text-gray-800 mb-4">O Nginx é um servidor web de alto desempenho que também funciona como um eficiente proxy reverso. Além de servir conteúdo estático rapidamente, ele pode atuar como gateway para aplicações backend, realizar balanceamento de carga e caching. Sua arquitetura orientada a eventos o torna extremamente eficiente em cenários de alta concorrência.</p>
                 
-                <!-- Card 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-soft transition-all duration-300 card-hover">
-                    <div class="text-5xl text-primary mb-6 flex justify-center">
-                        <i class="fas fa-exchange-alt"></i>
+            </div>
+
+            <!-- Apache -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-transition card-hover p-6 mb-6 border border-gray-200">
+                <div class="flex items-center mb-4">
+                    <div class="mr-4">
+                        <img src="https://imgs.search.brave.com/tNhFbv_hBu4AQIGIjgXKldgNoQMfTsKIf9kikcGsb5k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sb2dv/ZGl4LmNvbS9sb2dv/LzEwNTc4MTgucG5n" alt="Apache Logo" class="h-12">
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-center">Proxy Reverso</h3>
-                    <p class="text-gray-600 text-center">
-                        "Distribuição inteligente de aplicações web com proteção, roteamento dinâmico e escalabilidade."
-                    </p>
+                    <h3 class="text-xl font-semibold text-gray-800">Apache</h3>
                 </div>
-                
-                <!-- Card 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-soft transition-all duration-300 card-hover">
-                    <div class="text-5xl text-primary mb-6 flex justify-center">
-                        <i class="fas fa-envelope"></i>
+                <p class="text-gray-800 mb-4">O Apache HTTP Server, com seus módulos mod_proxy e mod_rewrite, oferece uma solução robusta para proxy reverso. Apesar de ser mais tradicional, continua sendo uma escolha popular devido à sua estabilidade, flexibilidade e ampla documentação. Ideal para ambientes que já utilizam Apache como servidor web principal.</p>
+           
+            </div>
+
+             <div class="bg-white rounded-xl shadow-md overflow-hidden card-transition card-hover p-6 mt-6 mb-6 border border-gray-200">
+                <div class="flex items-center mb-4">
+                    <div class="mr-4">
+                        <img src="https://imgs.search.brave.com/FMqwqvzPw9cG77pQe7FEeMco_EQPjMC-4yQbuGZh7y4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9iYW5u/ZXIyLmNsZWFucG5n/LmNvbS8yMDE5MDMx/OC9nb2cva2lzc3Bu/Zy1oYXByb3h5LWxv/YWQtYmFsYW5jaW5n/LXByb3h5LXNlcnZl/ci1hcHBsaWNhdGlv/bi1kZS1wcm94eS1w/cm90b2NvbC1oYXBy/b3h5LXRlY2hub2xv/Z2llcy0xNzEzOTAw/NTc3NDIxLndlYnA" alt="HAProxy Logo" class="h-12">
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-center">E-mail Corporativo</h3>
-                    <p class="text-gray-600 text-center">
-                        "Solução de e-mail personalizada com gerenciamento próprio, autenticação segura e controle de domínio."
-                    </p>
+                    <h3 class="text-xl font-semibold text-gray-800">HAProxy</h3>
                 </div>
-                
-                <!-- Card 4 -->
-                <div class="bg-white p-8 rounded-xl shadow-soft transition-all duration-300 card-hover">
-                    <div class="text-5xl text-primary mb-6 flex justify-center">
-                        <i class="fas fa-inbox"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-center">Webmail</h3>
-                    <p class="text-gray-600 text-center mb-6">
-                        "Interface web intuitiva para acesso aos e-mails de qualquer lugar, com suporte IMAP/SMTP."
-                    </p>
-                    <a href="https://webmail.asa.br" target="_blank" class="btn-secondary text-white px-6 py-2 rounded-lg font-medium transition block text-center">
-                        Acessar Webmail
-                    </a>
-                </div>
+                <p class="text-gray-800 mb-4">O HAProxy é uma solução de alta performance para balanceamento de carga TCP/HTTP e proxy reverso. Conhecido por sua eficiência e baixo consumo de recursos, é amplamente utilizado em ambientes de alta disponibilidade e tráfego intenso. Oferece recursos avançados como health checks, SSL termination e rate limiting.</p>
+              
             </div>
         </div>
-    </section>
 
-    <!-- Equipe Section -->
-    <section id="equipe" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Nossa Equipe</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+        <!-- Additional Info -->
+        <div class="mt-12 bg-white rounded-xl shadow-md p-6 border border-gray-200">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Visão Geral do Provedor</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-4 rounded-lg border border-gray-200">
+                    <h3 class="font-semibold text-gray-800 mb-2">Clientes exitentes</h3>
+                    <p class="text-3xl font-bold text-gray-800 mb-2">3</p>
+                </div>   
             </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-gray-800 text-sm">
+            <p>© 2025 Provedor de Serviços. </p>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Membro 1 - Álvaro -->
-                <div class="bg-gray-50 p-8 rounded-xl shadow-soft text-center transition-all duration-300 card-hover">
-                    <img src="https://avatars.githubusercontent.com/u/165521280?v=4" alt="Álvaro" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-hard">
-                    <h3 class="text-xl font-bold mb-2">Álvaro</h3>
-                    <p class="text-gray-600 mb-4">Desenvolvedor</p>
-                    <a href="https://github.com/alva010203" target="_blank" class="text-primary hover:text-secondary transition">
-                        <i class="fab fa-github text-2xl"></i>
-                    </a>
-                </div>
-                
-                <!-- Membro 2 - Jairo -->
-                <div class="bg-gray-50 p-8 rounded-xl shadow-soft text-center transition-all duration-300 card-hover">
-                    <img src="https://avatars.githubusercontent.com/u/164819215?v=4" alt="Jairo" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-hard">
-                    <h3 class="text-xl font-bold mb-2">Jairo</h3>
-                    <p class="text-gray-600 mb-4">Desenvolvedor</p>
-                    <a href="https://github.com/Jaiir0" target="_blank" class="text-primary hover:text-secondary transition">
-                        <i class="fab fa-github text-2xl"></i>
-                    </a>
-                </div>
-                
-                <!-- Membro 3 - Jordan -->
-                <div class="bg-gray-50 p-8 rounded-xl shadow-soft text-center transition-all duration-300 card-hover">
-                    <img src="https://avatars.githubusercontent.com/u/164351071?v=4" alt="Jordan" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-hard">
-                    <h3 class="text-xl font-bold mb-2">Jordan</h3>
-                    <p class="text-gray-600 mb-4">Desenvolvedor</p>
-                    <a href="https://github.com/Jordanjuliobr23" target="_blank" class="text-primary hover:text-secondary transition">
-                        <i class="fab fa-github text-2xl"></i>
-                    </a>
-                </div>
-                
-                <!-- Membro 4 - Yan -->
-                <div class="bg-gray-50 p-8 rounded-xl shadow-soft text-center transition-all duration-300 card-hover">
-                    <img src="https://avatars.githubusercontent.com/u/31291355?v=4" alt="Yan" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-hard">
-                    <h3 class="text-xl font-bold mb-2">Yan</h3>
-                    <p class="text-gray-600 mb-4">Desenvolvedor</p>
-                    <a href="https://github.com/yanmaia" target="_blank" class="text-primary hover:text-secondary transition">
-                        <i class="fab fa-github text-2xl"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato Section -->
-    <section id="contato" class="py-20 bg-primary text-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Contato</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-            </div>
-            
-            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Endereço -->
-                <div class="text-center">
-                    <div class="text-4xl mb-4 text-secondary">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Endereço</h3>
-                    <p>Av. Sen. Salgado Filho, 1559 – Tirol, Natal – RN, 59015-000</p>
-                </div>
-                
-                <!-- Telefone -->
-                <div class="text-center">
-                    <div class="text-4xl mb-4 text-secondary">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Telefone</h3>
-                    <p>(84) 99999-0000</p>
-                </div>
-                
-                <!-- Email -->
-                <div class="text-center">
-                    <div class="text-4xl mb-4 text-secondary">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">E-mail</h3>
-                    <p>contato@netifrn.com.br</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-2 mb-4 md:mb-0">
-                    <div class="flex items-center justify-center w-10 h-10 bg-primary text-white rounded-lg font-bold text-xl">
-                        IF
-                    </div>
-                    <span class="text-xl font-bold text-white">NetIFRN</span>
-                </div>
-                <p class="text-gray-400 text-sm">© 2025 NetIFRN – Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script>
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+        // Simple interaction for demonstration
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                const cardTitle = this.closest('.card-hover').querySelector('h2').textContent;
+                alert(`Você clicou no botão para acessar: ${cardTitle}`);
             });
         });
     </script>
