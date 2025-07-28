@@ -56,7 +56,14 @@ Criação da estrutura do **cliente01**, contendo:
 - **Sign** para assinatura de documentos
 - Integração completa com o provedor via DNS
 
+✅ **Etapa 3 - Cliente 2**
 
+Criação da estrutura do **cliente02**, contendo:
+- - Portal institucional do cliente
+- Proxy reverso local no cliente
+- **wordpress** sistema de gerenciamento de conteúdo (CMS)
+- Integração completa com o provedor via DNS
+  
 ---
 
 ## 📁 Estrutura de diretórios
@@ -128,19 +135,19 @@ Criação da estrutura do **cliente01**, contendo:
 
 -[alva010203](https://github.com/alva010203) - **Álvaro Augusto Pinheiro** 
 
-Atribuição: Proxy reverso Traefik / Hotsite
+Atribuição: Proxy reverso Traefik / Hotsite / Portal
 
 -[Jaiir0](https://github.com/Jaiir0) - **Jairo Bezerra de Araujo**
 
-Atribuição: Email/Webmail / Sign
+Atribuição: Email/Webmail / Sign / Proxy Reverso Apache
 
 -[yanmaia](https://github.com/yanmaia) - **Yan Ferreira Maia**
 
-Atribuição: Portal / Proxy Nginx
+Atribuição: Portal / Proxy Nginx / Proxy Reverso Apache
 
 -[Jordanjuliobr23](https://github.com/Jordanjuliobr23) - **Jordan julio**
 
-Atribuição: DNS / Portal
+Atribuição: DNS / Portal / CMS 
 
 ---
 
