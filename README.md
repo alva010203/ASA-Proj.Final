@@ -63,6 +63,15 @@ Criação da estrutura do **cliente02**, contendo:
 - Proxy reverso local no cliente
 - **wordpress** sistema de gerenciamento de conteúdo (CMS)
 - Integração completa com o provedor via DNS
+
+
+✅ **Etapa 4 - Cliente 3**
+
+Criação da estrutura do **cliente03**, contendo:
+- Portal institucional do cliente
+- Proxy reverso local no cliente
+- **wordpress** sistema de gerenciamento de conteúdo (CMS)
+- Integração completa com o provedor via DNS
   
 ---
 
@@ -135,19 +144,19 @@ Criação da estrutura do **cliente02**, contendo:
 
 -[alva010203](https://github.com/alva010203) - **Álvaro Augusto Pinheiro** 
 
-Atribuição: Proxy reverso Traefik / Hotsite / Portal
+Atribuição: Proxy reverso Traefik / Hotsite / Portal / Portal
 
 -[Jaiir0](https://github.com/Jaiir0) - **Jairo Bezerra de Araujo**
 
-Atribuição: Email/Webmail / Sign / Proxy Reverso Apache
+Atribuição: Email/Webmail / Sign / Proxy Reverso Apache / Proxy Reverso HAProxy
 
 -[yanmaia](https://github.com/yanmaia) - **Yan Ferreira Maia**
 
-Atribuição: Portal / Proxy Nginx / Proxy Reverso Apache
+Atribuição: Portal / Proxy Nginx / Proxy Reverso Apache / CMS
 
--[Jordanjuliobr23](https://github.com/Jordanjuliobr23) - **Jordan julio**
+-[Jordanjuliobr23](https://github.com/Jordanjuliobr23) - **Jordan julio Francelino**
 
-Atribuição: DNS / Portal / CMS 
+Atribuição: DNS / Portal / CMS / Proxy Reverso HAProxy
 
 ---
 
