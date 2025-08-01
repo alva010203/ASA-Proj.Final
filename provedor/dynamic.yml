@@ -2,8 +2,12 @@ tls:
   certificates:
     - certFile: "/certs/selfsigned.crt"
       keyFile: "/certs/selfsigned.key"
-    - certFile: "/certs/cliente1.crt"    # seu cert autoassinado para cliente1
-      keyFile: "/certs/cliente1.key" 
+    - certFile: "/certs/cliente1.crt"    
+      keyFile: "/certs/cliente1.key"
+    - certFile: "/certs/cliente2.crt"    
+      keyFile: "/certs/cliente2.key"
+    - certFile: "/certs/cliente3.crt"    
+      keyFile: "/certs/cliente3.key"
 http:
   routers:
     redirect-all:
