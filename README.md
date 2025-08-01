@@ -135,7 +135,7 @@ Criação da estrutura do **cliente02**, contendo:
 
 -[alva010203](https://github.com/alva010203) - **Álvaro Augusto Pinheiro** 
 
-Atribuição: Proxy reverso Traefik / Hotsite / Portal
+Atribuição: Proxy reverso Traefik / Hotsite / Portal / Proxy reverso HAproxy
 
 -[Jaiir0](https://github.com/Jaiir0) - **Jairo Bezerra de Araujo**
 
