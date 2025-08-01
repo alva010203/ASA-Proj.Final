@@ -144,19 +144,19 @@ Criação da estrutura do **cliente03**, contendo:
 
 -[alva010203](https://github.com/alva010203) - **Álvaro Augusto Pinheiro** 
 
-Atribuição: Proxy reverso Traefik / Hotsite / Portal / Portal / Proxy Reverso HAproxy
+Atribuição: Proxy reverso Traefik / Hotsite / Portal 
 
 -[Jaiir0](https://github.com/Jaiir0) - **Jairo Bezerra de Araujo**
 
-Atribuição: Email/Webmail / Sign / Proxy Reverso Apache / Proxy Reverso HAProxy
+Atribuição: Email/Webmail / Sign / Proxy Reverso Apache
 
 -[yanmaia](https://github.com/yanmaia) - **Yan Ferreira Maia**
 
-Atribuição: Portal / Proxy Nginx / Proxy Reverso Apache / CMS
+Atribuição: Portal / Proxy Nginx / Proxy Reverso Apache 
 
 -[Jordanjuliobr23](https://github.com/Jordanjuliobr23) - **Jordan julio Francelino**
 
-Atribuição: DNS / Portal / CMS / Proxy Reverso HAProxy
+Atribuição: DNS / Portal / CMS 
 
 ---
 
