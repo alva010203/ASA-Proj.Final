@@ -10,8 +10,8 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 @		IN	NS	ns.
-@		IN	A	10.99.98.254
-www		IN	A	10.99.98.254
+@		IN	A	192.168.0.47
+www		IN	A	192.168.0.47
 portal	IN	CNAME	www
 adminer IN  CNAME   www
 wordpress  IN  CNAME   www

@@ -11,6 +11,7 @@ COPY named.conf.local /etc/bind
 COPY db.asa.br /etc/bind
 COPY db.cliente1.br /etc/bind
 COPY db.cliente2.br /etc/bind
+COPY db.cliente3.br /etc/bind
 
 # ENTRYPOINT [ "executable" ]
 # No caso abaixo, o serviço chamado named (bind) é executado em primeiro plano

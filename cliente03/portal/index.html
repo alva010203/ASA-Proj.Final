@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAproxy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-black text-white shadow-lg">
+        <div class="container mx-auto px-4 py-8">
+            <h1 class="text-4xl text-blue-500 md:text-5xl font-bold text-center mb-2">HAproxy</h1>
+        </div>
+    </header>
+
+    <!-- Sobre Section -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2">
+                <img src="https://webhostinggeeks.com/blog/wp-content/uploads/2023/07/Haproxy-980x720-optimized.png" 
+                     alt="Nginx 20 anos" 
+                     class="rounded-full shadow-xl w-64 h-64 object-cover transition-all hover:shadow-2xl mx-auto">
+            </div>
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl font-bold text-blue-500 mb-6">Proxy Reverso HAproxy</h2>
+                <p class="text-gray-900 mb-4 leading-relaxed">
+                    O HAProxy (High Availability Proxy) é uma solução de software livre e de alto desempenho utilizada para balanceamento de carga (load balancing) e proxy reverso. Ele é amplamente adotado por empresas de todos os tamanhos para garantir alta disponibilidade, escalabilidade e desempenho de aplicações web e outros serviços de rede.
+                </p>
+                <p class="text-gray-900 mb-4 leading-relaxed">
+                    
+
+                  O HAProxy é uma ferramenta poderosa e confiável para arquiteturas que demandam alto desempenho, escalabilidade e tolerância a falhas. Por ser leve, robusto e altamente configurável, ele se tornou uma das soluções preferidas em ambientes de produção de missão crítica. 
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-500 mb-16">Benefícios do Proxy Reverso HAproxy</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Alta Disponibilidade</h3>
+                    <p class="text-gray-600">Em caso de falha de um ou mais servidores, o HAProxy redireciona o tráfego automaticamente para servidores saudáveis, garantindo continuidade do serviço.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Balanceamento de Carga</h3>
+                    <p class="text-gray-600">Distribuição de tráfego</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Proxy Reverso</h3>
+                    <p class="text-gray-600"> Atua como intermediário entre o cliente e o servidor backend, ocultando a estrutura interna da aplicação e oferecendo mais segurança.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Monitoramento e Estatísticas</h3>
+                    <p class="text-gray-600">Possui uma interface web de estatísticas que permite acompanhar o desempenho dos servidores e detectar problemas em tempo real.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- WordPress Card -->
+            <div class="bg-gradient-to-br from-red-50 to-red-100 border border-red-200 rounded-xl p-6 shadow-md transition-all card-hover">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fab fa-wordpress text-red-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-red-800">Site WordPress</h3>
+                </div>
+                <p class="text-gray-700 mb-6">
+                    Plataforma de gerenciamento de conteúdo WordPress para criação de sites completos.
+                    Solução flexível com milhares de temas e plugins para diversas necessidades.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-sm">WordPress</span>
+                    <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-sm">CMS</span>
+                    <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-sm">Responsivo</span>
+                </div>
+                <a href="https://wordpress.cliente3.br" class="mt-6 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition-all inline-block">
+                    Acesse
+                </a>
+            </div>
+            
+            <!-- WordPress Admin Card -->
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-xl p-6 shadow-md transition-all card-hover">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-cogs text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-800">Painel Admin WordPress</h3>
+                </div>
+                <p class="text-gray-700 mb-6">
+                    Área administrativa do WordPress para gerenciamento completo do site.
+                    Crie conteúdos, instale plugins, gerencie usuários e personalize seu site.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm">WordPress</span>
+                    <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm">Dashboard</span>
+                    <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm">Admin</span>
+                </div>
+                <a href="https://adminer.cliente3.br" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-all inline-block">
+                    Acesse
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">Proxy Reverso HAproxy</h3>
+                </div>
+            </div>
+            <div class="border-t border-blue-500 mt-6 pt-6 text-center text-blue-100">
+                <p>&copy; 2025 Proxy Reverso HAproxy.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

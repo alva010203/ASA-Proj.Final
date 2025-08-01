@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+
+  haproxy:
+    image: haproxy:2.9
+    container_name: haproxy
+    volumes:
+      - ./proxy:/usr/local/etc/haproxy/haproxy.cfg:ro
+    networks:
+      - rede_interna
+      - externa
+  portal:
+    image: nginx:alpine
+    container_name: portalHA_container
+    volumes:
+      - ./portal:/usr/share/nginx/html
+    networks:
+      - rede_interna
+
+  web04:
+    image: nginx:alpine
+    container_name: web04_container
+    volumes:
+      - ./web04:/usr/share/nginx/html
+    networks:
+      - rede_interna
+
+networks:
+  rede_interna:
+    driver: bridge
+  externa:
+    external: true
+    
