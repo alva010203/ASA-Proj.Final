@@ -63,7 +63,15 @@ Criação da estrutura do **cliente02**, contendo:
 - Proxy reverso local no cliente
 - **wordpress** sistema de gerenciamento de conteúdo (CMS)
 - Integração completa com o provedor via DNS
-  
+
+
+✅ **Etapa 4 - Cliente 3**
+
+Criação da estrutura do **cliente03**, contendo:
+- Portal institucional do cliente
+- Proxy reverso local no cliente
+- **wordpress** sistema de gerenciamento de conteúdo (CMS)
+- Integração completa com o provedor via DNS
 ---
 
 ## 📁 Estrutura de diretórios
