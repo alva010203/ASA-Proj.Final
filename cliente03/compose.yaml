@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+
+  haproxy:
+    image: haproxy:2.9
+    container_name: haproxy
+    volumes:
+      - ./proxy:/usr/local/etc/haproxy/haproxy.cfg:ro
+    networks:
+      - rede_interna
+      - externa
+    depends_on:
+      - wordpress
+      - portal
+      - adminer
+  portal:
+    image: nginx:alpine
+    container_name: portalHA_container
+    volumes:
+      - ./portal:/usr/share/nginx/html
+    networks:
+      - rede_interna
+
+  wordpress:
+      build: ./wordpress
+      restart: always
+      environment: 
+        WORDPRESS_DB_HOST: db
+        WORDPRESS_DB_USER: wpuser
+        WORDPRESS_DB_PASSWORD: wppass
+        WORDPRESS_DB_NAME: wpdb
+      volumes: 
+        - ./wordpress:/var/www/html/wp-content/plugins/plugin
+      networks:
+        rede_interna:
+          aliases:
+            - wordpress.cliente3.br
+
+  db:
+      image: mysql:5.7
+      restart: always
+      environment: 
+        MYSQL_DATABASE: wpdb
+        MYSQL_USER: wpuser
+        MYSQL_PASSWORD: wppass
+        MYSQL_RANDOM_ROOT_PASSWORD: '1'
+      volumes: 
+        - db:/var/lib/mysql
+      networks:
+        - rede_interna
+
+  adminer:
+      depends_on: 
+        - db
+      image: adminer
+      restart: always
+      networks:
+        rede_interna:
+          aliases:
+            - adminer.cliente3.br
+
+
+networks:
+  rede_interna:
+    driver: bridge
+  externa:
+    external: true
+
+
+volumes:
+  db:
+    
