@@ -16,7 +16,8 @@ Este projeto consiste na implementação completa de um **provedor de serviços*
 
 ✅ **[Apresentação](#Apresentação) do projeto e vídeo demonstrativo.**
 
-✅ **[Contribuidores](#Contribuidores) do projeto.**
+✅ **[Equipe](#Equipe) de Desenvolvimento do projeto.**
+
 ---
 <a name="Arquitetura"></a>
 ## 🛠️Arquitetura 
@@ -161,7 +162,7 @@ Criação da estrutura do **cliente03**, contendo:
 │       ├── config.inc.php
 │       └── Dockerfile
 └── README.md
-└── 
+└── compose.py
 ```
 
  <a name="Instruções"></a>
@@ -171,18 +172,18 @@ Criação da estrutura do **cliente03**, contendo:
 -  **Instalado docker desktop ou docker engine**
 -  **Instalar o github caso vá usar o git clone**
 ### Execução
-- **git clone https://github.com/alva010203/ASA-Entrega-01.git**
-- **cd ASA-Entrega-01**
-- **./service.sh dns build**    #constrói a imagem do DNS
-- **./service.sh dns build**    #constrói a imagem do serviço web
-- **./service.sh dns start**    #inicia o container DNS
-- **./service.sh web start.**   #inicia o container WEB
+- **git clone https://github.com/alva010203/ASA-Proj.Final.git**
+- **cd ASA-Proj.Final**
+- **
+- **
+- **
+- **
 
   <a name="Apresentação"></a>
 ### 🖥️ Apresentação projeto
 ---
 
-
+ <a name="Equipe"></a>
 ### 👨‍💻 Contribuições:
 
 -[alva010203](https://github.com/alva010203) - **Álvaro Augusto Pinheiro** 
@@ -193,12 +194,12 @@ Atribuição: Proxy reverso Traefik / Hotsite / Portal / Proxy reverso HAproxy
 
 Atribuição: Email/Webmail / Sign / Proxy Reverso Apache / Proxy reservo HAproxy
 
--[yanmaia](https://github.com/yanmaia) - **Yan Ferreira Maia**
-
-Atribuição: Portal / Proxy Nginx / Proxy Reverso Apache / Documentação do projeto
-
 -[Jordanjuliobr23](https://github.com/Jordanjuliobr23) - **Jordan julio Francelino**
 
 Atribuição: DNS / Portal / CMS 
+
+-[yanmaia](https://github.com/yanmaia) - **Yan Ferreira Maia**
+
+Atribuição: Portal / Proxy Nginx / Proxy Reverso Apache / Documentação do projeto
 
 ---
