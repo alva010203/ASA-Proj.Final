@@ -12,16 +12,16 @@ Este projeto consiste na implementação completa de um **provedor de serviços*
 
 ✅ **[Estrutura](#Estrutura) dos serviços implementados (dns,web).** 
 
-✅ **[Apresentação](#Apresentação) do projeto e vídeo demonstrativo.**
-
 ✅ **[Instruções](#Instruções) para execução local.** 
+
+✅ **[Apresentação](#Apresentação) do projeto e vídeo demonstrativo.**
 
 ✅ **[Contribuidores](#Contribuidores) do projeto.**
 ---
 <a name="Arquitetura"></a>
 ## 🛠️Arquitetura 
 
-**A arquitetura utiliza dois containers Docker: servidor web e um serviço de DNS. O DNS resolve domínios em IPs, o servidor web processa requisições HTTP e retorna respostas, e o cliente consulta o DNS para acessar o site hospedado no servidor web por meio da URL www.asa.br . Todos se comunicam por uma rede bridge interna, garantindo isolamento e segurança.**
+**A arquitetura simula a rede de um provedor de internet (ISP) com múltiplos clientes, utilizando containers Docker para isolar os serviços. O ISP centraliza DNS, e-mail, webmail, proxy reverso e um portal institucional. Cada cliente possui seu próprio ambiente com portal, CMS (WordPress) e outros serviços, gerenciados por proxies reversos. O roteamento é feito com base em domínios, resolvidos via BIND9. Toda comunicação entre serviços ocorre por redes internas do Docker, garantindo segurança e escalabilidade. O projeto facilita o gerenciamento multi-cliente com isolamento e reutilização de componentes via Docker..**
 
 <a name="Diagrama"></a>
 ### 📜Diagrama da Arquitetura
@@ -70,8 +70,8 @@ Criação da estrutura do **cliente03**, contendo:
 - Integração completa com o provedor via DNS
   
 ---
-
-## 📁 Estrutura de diretórios
+<a name="Estrutura"></a>
+## 📁 Estrutura de diretorios
 
 ```bash
 .
@@ -161,8 +161,25 @@ Criação da estrutura do **cliente03**, contendo:
 │       ├── config.inc.php
 │       └── Dockerfile
 └── README.md
+└── 
 ```
 
+ <a name="Instruções"></a>
+## 🚀 Instruções para Execução Local
+
+### Pré requisitos
+-  **Instalado docker desktop ou docker engine**
+-  **Instalar o github caso vá usar o git clone**
+### Execução
+- **git clone https://github.com/alva010203/ASA-Entrega-01.git**
+- **cd ASA-Entrega-01**
+- **./service.sh dns build**    #constrói a imagem do DNS
+- **./service.sh dns build**    #constrói a imagem do serviço web
+- **./service.sh dns start**    #inicia o container DNS
+- **./service.sh web start.**   #inicia o container WEB
+
+  <a name="Apresentação"></a>
+### 🖥️ Apresentação projeto
 ---
 
 
@@ -178,19 +195,10 @@ Atribuição: Email/Webmail / Sign / Proxy Reverso Apache / Proxy reservo HAprox
 
 -[yanmaia](https://github.com/yanmaia) - **Yan Ferreira Maia**
 
-Atribuição: Portal / Proxy Nginx / Proxy Reverso Apache 
+Atribuição: Portal / Proxy Nginx / Proxy Reverso Apache / Documentação do projeto
 
 -[Jordanjuliobr23](https://github.com/Jordanjuliobr23) - **Jordan julio Francelino**
 
 Atribuição: DNS / Portal / CMS 
 
 ---
-
-### 🖥️ Apresentação projeto
-
-Vídeo de execução:
-
-[https://drive.google.com/file/d/1D9VsCDlrwDUyqkM5JGbuOF-5P1egOUoJ/view?usp=drive_link]
-
-
-
