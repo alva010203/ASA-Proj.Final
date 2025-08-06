@@ -1,42 +1,34 @@
-# 🐳 Asa-Entrega-Provedor
-
-Este projeto consiste na implementação completa de um **provedor de serviços** com seus **clientes associados**, utilizando o proxy reverso **Traefik** para gerenciamento de tráfego, além de disponibilizar serviços de **DNS**, **e-mail**, **webmail** e **portais institucionais**.
-
-
-
+# 🐳 Asa-Projeto-Provedor de Serviços
 ---
+## 📌 Descrição do Projeto
+Este projeto consiste na implementação completa de um **provedor de serviços** com seus **clientes associados**, utilizando o proxy reverso **Traefik** para gerenciamento de tráfego, além de disponibilizar serviços de **DNS**, **e-mail**, **webmail** e **portais institucionais**, tendo 3 clientes associados com proxy de encaminhamento proprio e serviços de acordo com a necessidade de cada cliente.
 
-## 📝 Visão geral do projeto
+### 🧩 O que está incluido?
+✅ **[Arquitetura](#Arquitetura) do projeto  detallhada .** 
 
-🔧 **Estrutura final prevista:**
+✅ **[Diagrama](#Diagrama)  do projeto.**
 
-<p align="center">
+✅ **[Etapas](#Etapas) do projeto que foram executadas de acordo**
+
+✅ **[Estrutura](#Estrutura) dos serviços implementados (dns,web).** 
+
+✅ **[Apresentação](#Apresentação) do projeto e vídeo demonstrativo.**
+
+✅ **[Instruções](#Instruções) para execução local.** 
+
+✅ **[Contribuidores](#Contribuidores) do projeto.**
+---
+<a name="Arquitetura"></a>
+## 🛠️Arquitetura 
+
+**A arquitetura utiliza dois containers Docker: servidor web e um serviço de DNS. O DNS resolve domínios em IPs, o servidor web processa requisições HTTP e retorna respostas, e o cliente consulta o DNS para acessar o site hospedado no servidor web por meio da URL www.asa.br . Todos se comunicam por uma rede bridge interna, garantindo isolamento e segurança.**
+
+<a name="Diagrama"></a>
+### 📜Diagrama da Arquitetura
 <img width="740" height="416" alt="image" src="https://github.com/user-attachments/assets/6fa22c34-26f4-4384-a215-af2cc9b4743e" />
-</p>
-
-### 🖥️ Provedor
-
-Responsável por gerenciar:
-
-- **DNS**
-- **E-mail** (Postfix) e **Webmail** (Dovecot + Roundcube)
-- **Proxy reverso Traefik**
-- **Certificados SSL/TLS** para os clientes
-- Portal institucional próprio
-
-### 🌐 Clientes
-
-Serão **3 clientes distintos**, cada um com:
-
-- Seu **próprio proxy reverso**, configurado de maneira diferente
-- **Portal institucional exclusivo**
-- **Sites ou sistemas próprios**
-- Integração com o **provedor** para:
-  - Resolução de nomes via DNS
-  - Utilização dos serviços disponibilizados
 
 ---
-
+<a name="Etapas"></a>
 ## 🚀 Etapas do projeto
 
 ✅ **Etapa 1 - Provedor**
