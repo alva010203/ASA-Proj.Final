@@ -174,10 +174,8 @@ Criação da estrutura do **cliente03**, contendo:
 ### Execução
 - **git clone https://github.com/alva010203/ASA-Proj.Final.git**
 - **cd ASA-Proj.Final**
-- **
-- **
-- **
-- **
+- **Estando na pasta, digita o comando python .\compose.py up    para subir os containers**
+- **digita o comando python .\compose.py down para baixar os containers**
 
   <a name="Apresentação"></a>
 ### 🖥️ Apresentação projeto
