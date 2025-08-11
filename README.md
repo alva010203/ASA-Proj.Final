@@ -26,7 +26,7 @@ Este projeto consiste na implementação completa de um **provedor de serviços*
 
 <a name="Diagrama"></a>
 ### 📜Diagrama da Arquitetura
-<img width="740" height="416" alt="image" src="https://github.com/user-attachments/assets/6fa22c34-26f4-4384-a215-af2cc9b4743e" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/5c1a93a6-4418-4207-92a5-de1be47f0ed5" />
 
 ---
 <a name="Etapas"></a>
