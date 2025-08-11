@@ -69,7 +69,7 @@ Criação da estrutura do **cliente03**, contendo:
 - **Proxy reverso** local no cliente
 - **wordpress** sistema de gerenciamento de conteúdo (CMS)
 - Integração completa com o provedor via DNS
-  
+- Criação do arquivo compose.py com a automatização dos composes do cliente1,2 e 3 
 ---
 <a name="Estrutura"></a>
 ## 📁 Estrutura de diretorios
@@ -181,6 +181,7 @@ Criação da estrutura do **cliente03**, contendo:
 
   <a name="Apresentação"></a>
 ### 🖥️ Apresentação projeto
+https://drive.google.com/file/d/1D9VsCDlrwDUyqkM5JGbuOF-5P1egOUoJ/view?usp=drive_link
 ---
 
  <a name="Equipe"></a>
